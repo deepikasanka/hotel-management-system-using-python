@@ -1,7 +1,4 @@
-# Python program to solve
-# the given question
 
-# Create class for hotel data.
 class Hotel :
 	sortParam='name'
 	def __init__(self) -> None:
@@ -14,20 +11,16 @@ class Hotel :
 	def __lt__(self,other):
 		getattr(self,Hotel.sortParam)<getattr(other,Hotel.sortParam)
 	
-	# Function to change sort parameter to
-	# name
+	
 	@classmethod
 	def sortByName(cls):
 		cls.sortParam='name'
 
-	# Function to change sort parameter to
-	# rating.
+
 	@classmethod
 	def sortByRate(cls):
 		cls.sortParam='rating'
 
-	# Function to change sort parameter to
-	# room availability.
 	@classmethod
 	def sortByRoomAvailable(cls) :
 		cls.sortParam='roomAvl'
@@ -36,7 +29,6 @@ class Hotel :
 		return "PRHOTELS DATA:\nHotelName:{}\tRoom Available:{}\tLocation:{}\tRating:{}\tPricePer Room:{}".format(self.name,self.roomAvl,self.location,self.rating,self.pricePr)
 
 
-# Create class for user data.
 class User:
 	def __init__(self) -> None:
 		self.uname=''
@@ -49,13 +41,13 @@ class User:
 
 
 
-# Print hotels data.
+
 def PrintHotelData(hotels):
 	for h in hotels:
 		print(h)
 
 
-# Sort Hotels data by name.
+
 def SortHotelByName(hotels):
 	print("SORT BY NAME:")
 
@@ -66,7 +58,6 @@ def SortHotelByName(hotels):
 	print()
 
 
-# Sort Hotels by rating
 def SortHotelByRating(hotels):
 	print("SORT BY A RATING:")
 
@@ -77,7 +68,6 @@ def SortHotelByRating(hotels):
 	print()
 
 
-# Print Hotels for any city Location.
 def PrintHotelBycity(s,hotels):
 	print("HOTELS FOR {} LOCATION ARE:".format(s))
 	hotelsByLoc=[h for h in hotels if h.location==s]
@@ -87,7 +77,7 @@ def PrintHotelBycity(s,hotels):
 
 
 
-# Sort hotels by room Available.
+
 def SortByRoomAvailable(hotels):
 	print("SORT BY ROOM AVAILABLE:")
 	Hotel.sortByRoomAvailable()
@@ -96,10 +86,9 @@ def SortByRoomAvailable(hotels):
 	print()
 
 
-# Print the user's data
 def PrintUserData(userName, userId, bookingCost, hotels):
 	users=[]
-	# Access user data.
+	
 	for i in range(3) :
 		u=User()
 		u.uname = userName[i]
@@ -112,8 +101,7 @@ def PrintUserData(userName, userId, bookingCost, hotels):
 	
 
 
-# Functiont to solve
-# Hotel Management problem
+
 def HotelManagement(userName,
 					userId,
 					hotelName,
@@ -122,14 +110,10 @@ def HotelManagement(userName,
 					locations,
 					ratings,
 					prices):
-	# Initialize arrays that stores
-	# hotel data and user data
+
 	hotels=[]
 
-	# Create Objects for
-	# hotel and user.
 
-	# Initialise the data
 	for i in range(3) :
 		h=Hotel()
 		h.name = hotelName[i]
@@ -141,7 +125,7 @@ def HotelManagement(userName,
 	
 	print()
 
-	# Call the various operations
+
 	PrintHotelData(hotels)
 	SortHotelByName(hotels)
 	SortHotelByRating(hotels)
@@ -154,11 +138,10 @@ def HotelManagement(userName,
 				hotels)
 
 
-# Driver Code.
+
 if __name__ == '__main__':
 
-	# Initialize variables to stores
-	# hotels data and user data.
+
 	userName = ["U1", "U2", "U3"]
 	userId = [2, 3, 4] 
 	hotelName = ["H1", "H2", "H3"] 
@@ -170,7 +153,7 @@ if __name__ == '__main__':
 	ratings = [5, 5, 3]
 	prices = [100, 200, 100] 
 
-	# Function to perform operations
+
 	HotelManagement(userName, userId,
 					hotelName, bookingCost,
 					rooms, locations,
